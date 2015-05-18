@@ -23,6 +23,7 @@ namespace Falling_Rocks
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
