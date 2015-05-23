@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Threading;
 
-namespace Falling_Rocks
+namespace FallingRocks
 {
     class DrawThread
     {
         private const int FramesPerSecond = 25;
         private const int SkipTicks = 1000 / FramesPerSecond;
 
-        private readonly Thread _drawThread;
+        private Thread _drawThread;
         private readonly MainWindow _mainWindow;
 
         private bool _gameIsRunning;
@@ -16,7 +16,6 @@ namespace Falling_Rocks
         public DrawThread(MainWindow mainWindow)
         {
             this._mainWindow = mainWindow;
-            _drawThread = new Thread(Draw);
         }
 
         private void Draw()
@@ -42,6 +41,7 @@ namespace Falling_Rocks
             if (!this._gameIsRunning)
             {
                 this._gameIsRunning = true;
+                _drawThread = new Thread(Draw);
                 _drawThread.Start();
             }
         }

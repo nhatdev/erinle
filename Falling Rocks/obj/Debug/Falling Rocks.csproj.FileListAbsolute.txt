@@ -11,3 +11,16 @@ C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanc
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\Falling Rocks\Falling Rocks\obj\Debug\Falling Rocks.exe
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\Falling Rocks\Falling Rocks\obj\Debug\Falling Rocks.pdb
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\Falling Rocks\Falling Rocks\obj\Debug\Falling Rocks.csprojResolveAssemblyReference.cache
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\bin\Debug\Falling Rocks.exe.config
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling Rocks.exe
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling Rocks.pdb
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling Rocks.csprojResolveAssemblyReference.cache
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\MainWindow.baml
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\MainWindow.g.cs
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\App.g.cs
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling Rocks_MarkupCompile.cache
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling Rocks.g.resources
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling_Rocks.Properties.Resources.resources
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\obj\Debug\Falling Rocks.csproj.GenerateResource.Cache
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\bin\Debug\Falling Rocks.exe
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\Falling Rocks\bin\Debug\Falling Rocks.pdb
