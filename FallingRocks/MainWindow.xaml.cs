@@ -47,7 +47,7 @@ namespace FallingRocks
 
         private void BtnPlay_OnClick(object sender, RoutedEventArgs e)
         {
-           _drawThread.Start();
+            _drawThread.Start();
         }
     }
 }

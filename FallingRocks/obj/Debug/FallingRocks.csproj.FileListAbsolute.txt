@@ -1,0 +1,4 @@
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\bin\Debug\Falling Rocks.exe.config
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\Falling Rocks.exe
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\Falling Rocks.pdb
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\bin\Debug\FallingRocks.exe.config
