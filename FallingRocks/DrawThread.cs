@@ -9,13 +9,13 @@ namespace FallingRocks
         private const int SkipTicks = 1000 / FramesPerSecond;
 
         private Thread _drawThread;
-        private readonly MainWindow _mainWindow;
+        private readonly GameWindow _gameWindow;
 
         private bool _gameIsRunning;
 
-        public DrawThread(MainWindow mainWindow)
+        public DrawThread(GameWindow gameWindow)
         {
-            this._mainWindow = mainWindow;
+            this._gameWindow = gameWindow;
         }
 
         private void Draw()
@@ -25,7 +25,7 @@ namespace FallingRocks
 
             while (_gameIsRunning)
             {
-                _mainWindow.Draw();
+                _gameWindow.Draw();
 
                 nextTick += SkipTicks;
                 sleepTime = nextTick - GetNowInMilliseconds();

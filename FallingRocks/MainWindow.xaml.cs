@@ -5,21 +5,10 @@ namespace FallingRocks
 {
     public partial class MainWindow : Window
     {
-        private DrawThread _drawThread;
-        private int _counter;
 
         public MainWindow()
         {
-            _drawThread = new DrawThread(this);
-        }
-
-        public void Draw()
-        {
-            Counter.Dispatcher.BeginInvoke(new Action(() =>
-            {
-                Counter.Text = _counter.ToString();
-                _counter++;
-            }));
+            InitializeComponent();
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -47,7 +36,9 @@ namespace FallingRocks
 
         private void BtnPlay_OnClick(object sender, RoutedEventArgs e)
         {
-            _drawThread.Start();
+            GameWindow gameWindow = new GameWindow();
+            gameWindow.Show();
         }
+
     }
 }
