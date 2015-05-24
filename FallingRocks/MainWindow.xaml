@@ -4,10 +4,16 @@
         Title="Falling Rocks" Height="350" Width="525" WindowStartupLocation="CenterScreen">
     <Grid IsHitTestVisible="True" Background="Gray" Margin="0,0,-8,0">
 
+        <TextBlock Name="HighScores" Foreground="White" HorizontalAlignment="Center" />
+
+        <TextBlock Name="CurrentScores" Foreground="White" HorizontalAlignment="Right" Margin="0,0,10,0" />
+
         <Button Name="BtnPlay" FontWeight="Bold" Content="Play" Width="200" Height="20" VerticalAlignment="Top" Margin="0,70,0,0" Background="#FFE2E2E2" Foreground="Black" Click="BtnPlay_OnClick"/>
 
         <Button Name="BtnExit" FontWeight="Bold" Content="Exit" Width="200" Height="20" VerticalAlignment="Center" Margin="0,160,0,0" HorizontalAlignment="Center" Click="btnExit_Click"/>
 
+        <Button Name="BtnHighScores" FontWeight="Bold" Content="High Scores" Width="200" Height="20" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" Click="btnHighScores_Click"/>
+        
         <Button Name="BtnAbout" FontWeight="Bold" Content="About" Width="200" Height="20" VerticalAlignment="Center" Margin="0,70,0,0" HorizontalAlignment="Center" Click="btnAbout_Click"/>
 
         <Button Name="BtnBack" FontWeight="Bold" Content="Back" Width="200" Height="20" VerticalAlignment="Center" Margin="0,160,0,0" HorizontalAlignment="Center" Click="btnBack_Click" Visibility="Hidden"/>

@@ -7,52 +7,72 @@ using System.IO;
 
 namespace FallingRocks
 {
-    class Scores
+    public class Scores
     {
-        private int currentScores = 0;
+        private int _currentScores = 0;
+        private string _highScores = "";
 
-        public void getCurrentScores()
+        public Scores(MainWindow mainWindow)
         {
-
         }
 
-        public void getHighScores()
+        public string GetCurrentScores()
         {
-            try
+            return "Scores:" + _currentScores;
+        }
+
+        public int AddScores(int rocks)
+        {
+            _currentScores = _currentScores + rocks;
+
+            return _currentScores;
+        }
+
+        public string GetHighScores()
+        {
+            if (_highScores == "")
             {
-                using (StreamReader reader = new StreamReader("highScores.txt"))
+                var scores = new List<int>();
+                var lines = new List<string>();
+                foreach (string line in File.ReadAllLines("highScores.txt"))
                 {
-                    String line = reader.ReadToEnd();
-                    
+                    var score = line.Split(' ')[1];
+                    var scoreInt = Convert.ToInt32(score);
+                    scores.Add(scoreInt);
+                    lines.Add(line);
+                }
+
+                scores.Sort();
+                scores.Reverse();
+
+                var limit = 10;
+
+                if (scores.Count < 10)
+                {
+                    limit = scores.Count;
+                }
+
+                for (int i = 0; i < limit; i++)
+                {
+                    var index = scores[i].ToString();
+                    foreach (var line in lines)
+                    {
+                        if (line.IndexOf(index) != -1)
+                        {
+                            _highScores += Environment.NewLine + line;
+                        }
+                    }
                 }
             }
-            catch (Exception e)
-            {
-                //TODO boom
-            }
+
+            return _highScores;
         }
 
-        public int addScores(int stones)
+        public void AddToHighScores(string name)
         {
-            int scores = stones + currentScores;
+            string record = Environment.NewLine + name + ": " + _currentScores;
 
-            return scores;
-        }
-
-        private void addToHighScores()
-        {
-            string path = "highScores.txt";
-
-            try
-            {
-                using (StreamWriter writer = File.AppendText(path))
-                {
-                }
-            }
-            catch (Exception e)
-            {
-                //TODO boom
-            }
+            File.AppendAllText("highScores.txt", record);
         }
     }
 }
