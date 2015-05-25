@@ -1,16 +1,24 @@
 ﻿using System;
+using System.Media;
 using System.Windows;
+using System.Windows.Media;
 
 namespace FallingRocks
 {
     public partial class MainWindow : Window
     {
         public Scores Scores;
+        public Sound Sound;
 
         public MainWindow()
         {
+            Scores = new Scores();
+            Sound = new Sound();
+
+            Sound.PlayBackgroundMusic();
+            
             InitializeComponent();
-            Scores = new Scores(this);
+            
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -24,7 +32,7 @@ namespace FallingRocks
             BtnPlay.Visibility = System.Windows.Visibility.Hidden;
             BtnExit.Visibility = System.Windows.Visibility.Hidden;
             BtnAbout.Visibility = System.Windows.Visibility.Hidden;
-            BtnHighScores.Visibility = System.Windows.Visibility.Visible;
+            BtnHighScores.Visibility = System.Windows.Visibility.Hidden;
             BtnBack.Visibility = System.Windows.Visibility.Visible;
             Credits.Visibility = System.Windows.Visibility.Visible;
         }
@@ -42,6 +50,8 @@ namespace FallingRocks
 
         public void btnHighScores_Click(object sender, RoutedEventArgs e)
         {
+         
+            Sound.PlayScream();
 
             Scores.AddScores(15);
             //Scores.AddToHighScores("test");

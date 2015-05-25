@@ -9,10 +9,6 @@ namespace FallingRocks
         private int _currentScores = 0;
         private string _highScores = "";
 
-        public Scores(MainWindow mainWindow)
-        {
-        }
-
         public string GetCurrentScores()
         {
             return "Scores:" + _currentScores;
