@@ -12,18 +12,18 @@ namespace FallingRocks
     {
         public void PlayBackgroundMusic()
         {
-            var soundPlayer = new SoundPlayer(@"\background.wav");
-            soundPlayer.Play();
+//            var soundPlayer = new SoundPlayer(@"c:\background.wav");
+//            soundPlayer.Play();
         }
 
         public void PlayScream()
         {
-            /*var soundPlayer = new SoundPlayer(@"c:\crash.wav");
-            soundPlayer.Play();*/
+            var soundPlayer = new SoundPlayer(@"c:\background.wav");
+            soundPlayer.Play();
 
             var player = new System.Windows.Media.MediaPlayer();
             player.Open(new Uri(@"c:\crash.wav"));
-            
+
             player.Play();
         }
     }

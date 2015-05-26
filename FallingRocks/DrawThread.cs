@@ -5,7 +5,7 @@ namespace FallingRocks
 {
     class DrawThread
     {
-        private const int FramesPerSecond = 25;
+        private const int FramesPerSecond = 60;
         private const int SkipTicks = 1000 / FramesPerSecond;
 
         private Thread _drawThread;

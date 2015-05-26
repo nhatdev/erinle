@@ -16,9 +16,9 @@ namespace FallingRocks
             Sound = new Sound();
 
             Sound.PlayBackgroundMusic();
-            
+
             InitializeComponent();
-            
+
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -50,7 +50,7 @@ namespace FallingRocks
 
         public void btnHighScores_Click(object sender, RoutedEventArgs e)
         {
-         
+
             Sound.PlayScream();
 
             Scores.AddScores(15);
@@ -58,7 +58,7 @@ namespace FallingRocks
 
             CurrentScores.Text = Scores.GetCurrentScores();
 
-            HighScores.Text = 
+            HighScores.Text =
                 Environment.NewLine +
                 "High Scores" +
                 Environment.NewLine +
@@ -74,8 +74,8 @@ namespace FallingRocks
 
         private void BtnPlay_OnClick(object sender, RoutedEventArgs e)
         {
-            //GameWindow gameWindow = new GameWindow();
-            //gameWindow.Show();
+            GameWindow gameWindow = new GameWindow();
+            gameWindow.Show();
         }
 
     }
