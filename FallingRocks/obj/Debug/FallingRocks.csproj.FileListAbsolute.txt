@@ -1,7 +1,6 @@
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\bin\Debug\FallingRocks.exe.config
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\bin\Debug\FallingRocks.exe
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\bin\Debug\FallingRocks.pdb
-C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\FallingRocks.csprojResolveAssemblyReference.cache
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\MainWindow.baml
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\MainWindow.g.cs
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\App.g.cs
@@ -11,3 +10,7 @@ C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanc
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\FallingRocks.csproj.GenerateResource.Cache
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\FallingRocks.exe
 C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\FallingRocks.pdb
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\GameWindow.baml
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\GameWindow.g.cs
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\FallingRocks.csprojResolveAssemblyReference.cache
+C:\Users\Nhat\Desktop\SoftUni\2. Programming Fundamentals - 4 May 2015\1. Advanced C#\Teamwork Project\erinle\FallingRocks\obj\Debug\FallingRocks_Content.g.cs
