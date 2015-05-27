@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -12,14 +13,14 @@ namespace FallingRocks
         public const int WindowHeight = 500;
         public const int WindowWidth = 400;
 
-        private const int FallingSpeed = 5;
-
         private DrawThread _drawThread;
 
         private Dwarf _dwarf;
-        private Rock _rock;
+        private List<Rock> _rocks;
 
         private BitmapImage _rockBitmap;
+
+        private Random _random = new Random();
 
         public GameWindow()
         {
@@ -31,16 +32,31 @@ namespace FallingRocks
         private void InitializeGame()
         {
             _drawThread = new DrawThread(this);
+            InitializeDwarf();
+            InitializeRocks();
+        }
 
-            BitmapImage dwarfBitmap = new BitmapImage(new Uri(@"rock.png", UriKind.RelativeOrAbsolute));
+        private void InitializeDwarf()
+        {
+            BitmapImage dwarfBitmap = new BitmapImage(new Uri(@"Mushroom.jpg", UriKind.RelativeOrAbsolute));
             _dwarf = new Dwarf(dwarfBitmap);
-
-            _rockBitmap = new BitmapImage(new Uri(@"rock.png", UriKind.RelativeOrAbsolute));
-            _rock = new Rock(FallingSpeed, _rockBitmap);
-
+            _dwarf.X = WindowWidth / 2;
             RockCanvas.Children.Add(_dwarf);
-            RockCanvas.Children.Add(_rock);
-            Canvas.SetTop(_dwarf, 420);
+            Canvas.SetTop(_dwarf, 415);
+            Canvas.SetLeft(_dwarf, _dwarf.X);
+        }
+
+        private void InitializeRocks()
+        {
+            _rockBitmap = new BitmapImage(new Uri(@"rock.png", UriKind.RelativeOrAbsolute));
+            _rocks = new List<Rock>();
+            for (int i = 0; i < 3; i++)
+            {
+                Rock rock = new Rock(_rockBitmap);
+                rock.X = i * 165;
+                _rocks.Add(rock);
+                RockCanvas.Children.Add(rock);
+            }
         }
 
         private void StartGame()
@@ -52,10 +68,19 @@ namespace FallingRocks
         {
             Dispatcher.BeginInvoke((Action)(() =>
             {
-                _rock.Fall();
-                Canvas.SetTop(_rock, _rock.Y);
+                foreach (var rock in _rocks)
+                {
+                    rock.Fall(_random);
 
-                CheckGameOver();
+                    Canvas.SetLeft(rock, rock.X);
+                    Canvas.SetTop(rock, rock.Y);
+
+                    if (CheckGameOver(rock))
+                    {
+                        break;
+                    }
+                }
+
             }));
         }
 
@@ -69,25 +94,29 @@ namespace FallingRocks
             {
                 _dwarf.MoveRight();
             }
-            Canvas.SetRight(_dwarf, _dwarf.X);
+            Canvas.SetLeft(_dwarf, _dwarf.X);
         }
 
-        private void CheckGameOver()
+        private bool CheckGameOver(Rock rock)
         {
-            if (_rock.Y >= 450)
+            bool isOver = false;
+
+            if (rock.Y >= WindowHeight - Dwarf.DwarfHeight)
             {
                 int dwarfLeft = _dwarf.X;
-                int dwarfRight = _dwarf.X + 70;
+                int dwarfRight = _dwarf.X + Dwarf.DwarfWidth;
 
-                int rockLeft = _rock.X;
-                int rockRight = _rock.X + 50;
+                int rockLeft = rock.X;
+                int rockRight = rock.X + Rock.RockWidth;
 
                 if ((dwarfLeft >= rockLeft && dwarfLeft <= rockRight) || (dwarfRight >= rockLeft && dwarfRight <= rockRight))
                 {
                     _drawThread.Stop();
                     GameOverText.Visibility = Visibility.Visible;
+                    isOver = true;
                 }
             }
+            return isOver;
         }
 
     }

@@ -6,27 +6,33 @@ namespace FallingRocks
 {
     public class Rock : Image
     {
+        public const int RockWidth = 50;
+        public const int RockHeight = 50;
+
         public Image Image { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
 
-        private readonly int _fallingSpeed;
+        private int _fallingSpeed;
 
-        public Rock(int fallingSpeed, BitmapImage bitmap)
+        public Rock(BitmapImage bitmap)
         {
-            this._fallingSpeed = fallingSpeed;
+            this._fallingSpeed = 5;
             Source = bitmap;
-            Width = 50;
-            Height = 50;
+            Width = RockWidth;
+            Height = RockHeight;
+
         }
 
-        public void Fall()
+        public void Fall(Random random)
         {
             Y += _fallingSpeed;
 
             if (Y >= GameWindow.WindowHeight)
             {
-                Y = 0;
+                Y = -50;
+                X = random.Next(GameWindow.WindowWidth - RockWidth);
+                _fallingSpeed = random.Next(4, 8);
             }
         }
     }
