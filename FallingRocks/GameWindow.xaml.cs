@@ -22,11 +22,15 @@ namespace FallingRocks
 
         private Random _random = new Random();
 
+        public Scores Scores;
+
         public GameWindow()
         {
+           // CurrentScores.Text = Scores.GetCurrentScores();
             InitializeComponent();
             InitializeGame();
             StartGame();
+
         }
 
         private void InitializeGame()
@@ -111,6 +115,7 @@ namespace FallingRocks
 
                 if ((dwarfLeft >= rockLeft && dwarfLeft <= rockRight) || (dwarfRight >= rockLeft && dwarfRight <= rockRight))
                 {
+                    Sound.PlayScream();
                     _drawThread.Stop();
                     GameOverText.Visibility = Visibility.Visible;
                     isOver = true;

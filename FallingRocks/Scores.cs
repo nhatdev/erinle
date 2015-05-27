@@ -6,10 +6,10 @@ namespace FallingRocks
 {
     public class Scores
     {
-        private int _currentScores = 0;
-        private string _highScores = "";
+        private static int _currentScores = 0;
+        private static string _highScores = "";
 
-        public string GetCurrentScores()
+        public static string GetCurrentScores()
         {
             return "Scores:" + _currentScores;
         }

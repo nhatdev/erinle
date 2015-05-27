@@ -51,12 +51,12 @@ namespace FallingRocks
         public void btnHighScores_Click(object sender, RoutedEventArgs e)
         {
 
-            Sound.PlayScream();
+            //Sound.PlayScream();
 
             Scores.AddScores(15);
             //Scores.AddToHighScores("test");
 
-            CurrentScores.Text = Scores.GetCurrentScores();
+           CurrentScores.Text = Scores.GetCurrentScores();
 
             HighScores.Text =
                 Environment.NewLine +
