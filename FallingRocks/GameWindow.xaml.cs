@@ -2,8 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
 namespace FallingRocks
@@ -21,7 +19,7 @@ namespace FallingRocks
         private Dwarf _dwarf;
         private Rock _rock;
 
-        private BitmapImage rockImage;
+        private BitmapImage _rockBitmap;
 
         public GameWindow()
         {
@@ -33,17 +31,16 @@ namespace FallingRocks
         private void InitializeGame()
         {
             _drawThread = new DrawThread(this);
-            _dwarf = new Dwarf();
-            _rock = new Rock(FallingSpeed);
-            InitRockImage();
-        }
 
-        private void InitRockImage()
-        {
-            rockImage = new BitmapImage();
-            rockImage.BeginInit();
-            rockImage.UriSource = new Uri(@"/rock.png", UriKind.RelativeOrAbsolute);
-            rockImage.EndInit();
+            BitmapImage dwarfBitmap = new BitmapImage(new Uri(@"rock.png", UriKind.RelativeOrAbsolute));
+            _dwarf = new Dwarf(dwarfBitmap);
+
+            _rockBitmap = new BitmapImage(new Uri(@"rock.png", UriKind.RelativeOrAbsolute));
+            _rock = new Rock(FallingSpeed, _rockBitmap);
+
+            RockCanvas.Children.Add(_dwarf);
+            RockCanvas.Children.Add(_rock);
+            Canvas.SetTop(_dwarf, 420);
         }
 
         private void StartGame()
@@ -56,9 +53,9 @@ namespace FallingRocks
             Dispatcher.BeginInvoke((Action)(() =>
             {
                 _rock.Fall();
-                Canvas.SetTop(Rock, _rock.Y);
+                Canvas.SetTop(_rock, _rock.Y);
+
                 CheckGameOver();
-                Test();
             }));
         }
 
@@ -72,7 +69,7 @@ namespace FallingRocks
             {
                 _dwarf.MoveRight();
             }
-            Canvas.SetRight(Dwarf, _dwarf.X);
+            Canvas.SetRight(_dwarf, _dwarf.X);
         }
 
         private void CheckGameOver()
@@ -93,16 +90,5 @@ namespace FallingRocks
             }
         }
 
-        private void Test()
-        {
-            int dwarfLeft = _dwarf.X;
-            int dwarfRight = _dwarf.X + 70;
-
-            int rockLeft = _rock.X;
-            int rockRight = _rock.X + 50;
-
-            DwarfPositionTest.Text = "Dwarf: " + dwarfLeft + " / " + dwarfRight;
-            RockPositionTest.Text = "Rock: Y " + rockLeft + " / " + rockRight;
-        }
     }
 }

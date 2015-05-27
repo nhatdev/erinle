@@ -4,13 +4,6 @@
         Title="GameWindow" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         KeyDown="GameWindow_OnKeyDown">
     <Canvas Name="RockCanvas">
-        <Image Name="Rock" Width="50" Height="50" Source="rock.png"></Image>
-
-        <Image Name="Dwarf" Width="70" Height="70" Source="rock.png" Margin="170, 410"></Image>
-
         <TextBlock Name="GameOverText" Margin="150, 200" FontSize="20" Visibility="Hidden">Game Over!</TextBlock>
-
-        <TextBlock Name="DwarfPositionTest" Margin="200, 10">1</TextBlock>
-        <TextBlock Name="RockPositionTest" Margin="200, 40">1</TextBlock>
     </Canvas>
 </Window>

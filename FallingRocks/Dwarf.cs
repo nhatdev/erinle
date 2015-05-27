@@ -1,14 +1,17 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace FallingRocks
 {
-    public class Dwarf
+    public class Dwarf : Image
     {
         public int X { get; set; }
 
-        public Dwarf()
+        public Dwarf(BitmapImage bitmap)
         {
-            this.X = 170;
+            Source = bitmap;
+            Width = 50;
+            Height = 50;
         }
 
         public void MoveLeft()
