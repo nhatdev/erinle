@@ -17,20 +17,22 @@ namespace FallingRocks
 
         private Dwarf _dwarf;
         private List<Rock> _rocks;
+        private int rockLoops = 0;
 
         private BitmapImage _rockBitmap;
 
         private Random _random = new Random();
 
         public Scores Scores;
+        private string _input = "";
 
         public GameWindow()
         {
-           // CurrentScores.Text = Scores.GetCurrentScores();
+            Scores = new Scores();
+         
             InitializeComponent();
             InitializeGame();
             StartGame();
-
         }
 
         private void InitializeGame()
@@ -54,6 +56,7 @@ namespace FallingRocks
         {
             _rockBitmap = new BitmapImage(new Uri(@"rock.png", UriKind.RelativeOrAbsolute));
             _rocks = new List<Rock>();
+            
             for (int i = 0; i < 3; i++)
             {
                 Rock rock = new Rock(_rockBitmap);
@@ -72,6 +75,7 @@ namespace FallingRocks
         {
             Dispatcher.BeginInvoke((Action)(() =>
             {
+                
                 foreach (var rock in _rocks)
                 {
                     rock.Fall(_random);
@@ -81,11 +85,24 @@ namespace FallingRocks
 
                     if (CheckGameOver(rock))
                     {
+                        InputName.Visibility = System.Windows.Visibility.Visible;
                         break;
                     }
+                    //print current scores
+                    CurrentScores.Text = Scores.GetCurrentScores();
                 }
 
             }));
+        }
+
+        private void EnterName(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                _input = InputName.Text;
+                Scores.AddToHighScores(_input);
+                this.Close();
+            }
         }
 
         private void GameWindow_OnKeyDown(object sender, KeyEventArgs e)
@@ -107,18 +124,25 @@ namespace FallingRocks
 
             if (rock.Y >= WindowHeight - Dwarf.DwarfHeight)
             {
+                
                 int dwarfLeft = _dwarf.X;
                 int dwarfRight = _dwarf.X + Dwarf.DwarfWidth;
 
                 int rockLeft = rock.X;
                 int rockRight = rock.X + Rock.RockWidth;
 
-                if ((dwarfLeft >= rockLeft && dwarfLeft <= rockRight) || (dwarfRight >= rockLeft && dwarfRight <= rockRight))
+                if ((dwarfLeft >= rockLeft && dwarfLeft <= rockRight) ||
+                    (dwarfRight >= rockLeft && dwarfRight <= rockRight))
                 {
                     Sound.PlayScream();
                     _drawThread.Stop();
                     GameOverText.Visibility = Visibility.Visible;
                     isOver = true;
+                }
+                else
+                {
+                    //add score
+                    Scores.AddScores(1);
                 }
             }
             return isOver;

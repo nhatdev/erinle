@@ -9,7 +9,7 @@ namespace FallingRocks
         private static int _currentScores = 0;
         private static string _highScores = "";
 
-        public static string GetCurrentScores()
+        public string GetCurrentScores()
         {
             return "Scores:" + _currentScores;
         }
@@ -63,7 +63,7 @@ namespace FallingRocks
 
         public void AddToHighScores(string name)
         {
-            string record = Environment.NewLine + name + ": " + _currentScores;
+            string record = Environment.NewLine + name + ": " + _currentScores + " Scores";
 
             File.AppendAllText("highScores.txt", record);
         }

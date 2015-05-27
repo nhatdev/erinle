@@ -4,6 +4,7 @@
         Title="GameWindow" Height="500" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         KeyDown="GameWindow_OnKeyDown">
     <Canvas Name="RockCanvas">
+        <TextBox Name="InputName" KeyDown="EnterName" Visibility="Hidden" HorizontalAlignment="Right" MaxWidth="200" Height="20" Width="218" Canvas.Left="107" Canvas.Top="10"></TextBox>
         <TextBlock Name="GameOverText" Margin="150, 200" FontSize="20" Visibility="Hidden">Game Over!</TextBlock>
         <TextBlock Name="CurrentScores" HorizontalAlignment="Right" Margin="0,0,10,0" />
     </Canvas>
